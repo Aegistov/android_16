@@ -13,6 +13,6 @@ class CartWriter:
     def insert_item(cart_sid: str, product_sid: str, quantity: int) -> Cart:
         with open(CartWriter.CSV_NAME, 'a', newline='') as cart_table:
             cart_writer = writer(cart_table)
-            uid = CartReader.get_table_size() + 1
+            uid = CartReader.get_table_size()
             cart_writer.writerow([uid, cart_sid, product_sid, quantity])
         return Cart(uid, cart_sid, product_sid, quantity)
