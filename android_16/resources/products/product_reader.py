@@ -11,4 +11,6 @@ class ProductReader:
     def get_products():
         with open(ProductReader.CSV_NAME, newline='') as products_table:
             product_reader = reader(products_table)
+            # We skip the first item because that one contains the column names
+            next(product_reader)
             return [Product(*item) for item in product_reader]
