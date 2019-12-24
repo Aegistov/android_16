@@ -1,5 +1,7 @@
 from decimal import Decimal
 
+from typing import Dict
+
 
 class Product:
     def __init__(
@@ -14,7 +16,7 @@ class Product:
         self.name = name
         self.price = price
 
-    def serialize(self):
+    def serialize(self) -> Dict:
         return {
             "sid": self.sid,
             "name": self.name,

@@ -1,3 +1,6 @@
+from typing import Dict
+
+
 class Cart:
     def __init__(
         self,
@@ -11,7 +14,7 @@ class Cart:
         self.product_sid = product_sid
         self.quantity = quantity
 
-    def serialize(self):
+    def serialize(self) -> Dict:
         return {
             "sid": self.sid,
             "product_sid": self.product_sid,
